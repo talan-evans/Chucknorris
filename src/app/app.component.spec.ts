@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -26,10 +27,9 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('chucknorris');
   });
 
-  it('should render title', () => {
+  it('should show title', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('chucknorris app is running!');
-  });
+    const element = fixture.debugElement;
+    expect(element.query(By.css('h1')).nativeElement.textContent.trim()).toEqual('Chuck Norris');
+  })
 });

@@ -1,0 +1,10 @@
+<h3 id="joke">
+    {{ joke }}
+</h3>
+<h5>
+    <div *ngFor="let c of categories">
+        {{ c }}
+    </div>
+</h5>
+
+<button (click)="getNewJoke()">Get New Joke</button>
